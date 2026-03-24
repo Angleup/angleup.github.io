@@ -3,49 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meine App</title>
+    <title>AngleUp – Analyse für deinen Sport</title>
 
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f7;
             text-align: center;
         }
 
         header {
-            background-color: #111;
+            background: linear-gradient(135deg, #0071e3, #00c6ff);
             color: white;
-            padding: 40px 20px;
+            padding: 80px 20px;
         }
 
         h1 {
-            margin: 0;
-            font-size: 2.5em;
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-top: 40px;
         }
 
         p {
             font-size: 1.2em;
             color: #333;
-        }
-
-        .container {
-            padding: 40px 20px;
+            max-width: 600px;
+            margin: 10px auto;
         }
 
         .button {
             display: inline-block;
-            margin-top: 20px;
-            padding: 15px 25px;
+            margin-top: 30px;
+            padding: 15px 30px;
             font-size: 18px;
             color: white;
-            background-color: #0071e3;
+            background-color: #000;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 10px;
         }
 
-        .button:hover {
-            background-color: #005bb5;
+        .section {
+            padding: 60px 20px;
+        }
+
+        .features {
+            max-width: 700px;
+            margin: auto;
+            text-align: left;
+        }
+
+        .features li {
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+
+        /* iPhone Mockup */
+        .phone {
+            width: 250px;
+            height: 500px;
+            margin: 40px auto;
+            border: 12px solid black;
+            border-radius: 40px;
+            background-color: black;
+            position: relative;
+        }
+
+        .screen {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+
+        .screen img {
+            width: 100%;
+        }
+
+        footer {
+            background-color: #111;
+            color: white;
+            padding: 40px 20px;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            color: #ccc;
+            font-size: 0.9em;
         }
     </style>
 </head>
@@ -53,19 +102,57 @@
 <body>
 
     <header>
-        <h1>Meine App</h1>
-        <p>Die beste App für XYZ 🚀</p>
-    </header>
-
-    <div class="container">
-        <p>
-            Diese App hilft dir dabei, XYZ schneller und einfacher zu erledigen.
-        </p>
+        <h1>AngleUp</h1>
+        <p>Analysiere deine Bewegungen. Verbessere deine Technik.</p>
 
         <a class="button" href="https://apps.apple.com/DEIN-LINK">
-            Jetzt im App Store laden
+            📥 Im App Store herunterladen
         </a>
+    </header>
+
+    <div class="section">
+        <h2>Was ist AngleUp?</h2>
+        <p>
+            AngleUp ist eine App für Schul- und Breitensport, mit der du
+            Gelenkwinkel bei sportlichen Bewegungen messen kannst –
+            zum Beispiel beim Basketballwurf.
+        </p>
     </div>
+
+    <!-- iPhone Mockup -->
+    <div class="section">
+        <h2>App in Aktion</h2>
+
+        <div class="phone">
+            <div class="screen">
+                <!-- HIER DEIN SCREENSHOT -->
+                <img src="https://via.placeholder.com/300x600" alt="App Screenshot">
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Funktionen</h2>
+
+        <ul class="features">
+            <li>📐 Messung von Gelenkwinkeln in Echtzeit</li>
+            <li>🏀 Analyse von Bewegungen wie Würfen oder Sprüngen</li>
+            <li>📊 Unterstützung für Training und Technikverbesserung</li>
+            <li>🎓 Ideal für Schule und Verein</li>
+        </ul>
+    </div>
+
+    <footer>
+        <h2>Impressum</h2>
+        <p>
+            AngleUp<br>
+            Tobias Creutzburg<br>
+            Paulstraße 7<br>
+            30167 Hannover<br><br>
+
+            E-Mail: Angleup@web.de
+        </p>
+    </footer>
 
 </body>
 </html>
