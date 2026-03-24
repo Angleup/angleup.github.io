@@ -48,14 +48,24 @@
 }
         
 
-        header {
-            background: linear-gradient(135deg, #0071e3, #00c6ff);
-            color: white;
-            padding: 80px 20px;
-        }
+header {
+    background: linear-gradient(180deg, rgb(39,105,197), #6ecbff);
+    color: white;
+}
+
+.header-content {
+    text-align: center;
+    padding: 60px 20px 80px;
+}
+
+/* Logo mittig */
+.logo-center {
+    height: 80px;
+    margin-bottom: 20px;
+}
 
         h1 {
-            font-size: 3em;
+            font-size: 2.8em;
             margin-bottom: 10px;
         }
 
@@ -66,9 +76,7 @@
 
         p {
             font-size: 1.2em;
-            color: #333;
-            max-width: 600px;
-            margin: 10px auto;
+            color: rgba(255,255,255,0.9);
         }
 
         .button {
@@ -137,21 +145,19 @@
 <body>
 
 <header>
-    <div class="top-bar">
-        <img src="images/Logo3.png" alt="AngleUp Logo" class="logo">
+    <div class="header-content">
+
+        <img src="images/Logo3.png" alt="AngleUp Logo" class="logo-center">
+
+        <h1>AngleUp</h1>
+        <p>Analysiere deine Bewegungen. Verbessere deine Technik.</p>
+
+        <a class="appstore-button" href="https://apps.apple.com/DEIN-LINK">
+            <span class="apple-logo"></span>
+            <span>Im App Store laden</span>
+        </a>
+
     </div>
-
-    <h1>AngleUp</h1>
-    <p>Analysiere deine Bewegungen. Verbessere deine Technik.</p>
-
-
-
-    <a class="appstore-button" href="https://apps.apple.com/de/app-store/">
-    <span class="apple-logo"></span>
-    <span>Im App Store laden</span>
-</a>
-    
-
 </header>
 
     <div class="section">
