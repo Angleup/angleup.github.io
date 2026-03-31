@@ -1,12 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AngleUp – Analyse für deinen Sport</title>
-
-    <style>
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AngleUp – Analyse für deinen Sport</title>
+<style>
         .appstore-button {
     display: inline-flex;
     align-items: center;
@@ -20,11 +19,9 @@
     font-size: 18px;
     font-weight: 500;
 }
-
 .appstore-button:hover {
     background-color: #333;
 }
-
 .apple-logo {
     font-size: 22px;
     font-weight: bold;
@@ -36,18 +33,15 @@
             background-color: #f5f5f7;
             text-align: center;
         }
-
     .top-bar {
     display: flex;
     justify-content: flex-end;
     padding: 10px 20px;
 }
-
 .logo {
     height: 50px;
 }
         
-
 header {
     background: linear-gradient(
         180deg,
@@ -57,7 +51,6 @@ header {
     );
     color: white;
 }
-
 .header-content {
     text-align: center;
     /*padding: 60px 20px 80px; */ 
@@ -69,38 +62,30 @@ header {
     flex-direction: column;
     align-items: center;
 }
-
 /* Logo mittig */
 .logo-center {
     height: 80px;
     margin-bottom: 2px;
 }
-
         h1 {
             font-size: 2.8em;
             margin-bottom: 10px;
         }
-
         h2 {
             font-size: 2em;
             margin-top: 40px;
         }
-
         p {
             font-size: 1.2em;
             /*color: rgba(255,255,255,0.8); */
             color: #444;
         }
-
-
         p2 {
             font-size: 1.2em;
             color: rgba(255,255,255,0.8); 
             
         }
-
         
-
         .button {
             display: inline-block;
             margin-top: 30px;
@@ -111,22 +96,18 @@ header {
             text-decoration: none;
             border-radius: 10px;
         }
-
         .section {
             padding: 60px 20px;
         }
-
         .features {
             max-width: 700px;
             margin: auto;
             text-align: left;
         }
-
         .features li {
             margin: 15px 0;
             font-size: 1.1em;
         }
-
         /* iPad Mockup */
 .tablet {
     width: 600px;
@@ -137,112 +118,122 @@ header {
     background-color: black;
     padding: 10px;
 }
-
 .tablet-screen {
     background-color: white;
     border-radius: 20px;
     overflow: hidden;
 }
-
 .tablet-screen img {
     width: 100%;
     height: auto;
     display: block;
 }
-
         footer {
             background-color: #111;
             color: white;
             padding: 40px 20px;
             font-size: 0.9em;
         }
-
         footer p {
             color: #ccc;
             font-size: 0.9em;
         }
+    
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            .section {
+                padding: 40px 15px;
+            }
+            p, p2 {
+                font-size: 1em;
+            }
+            .tablet {
+                width: 100%;
+                border-width: 8px;
+                border-radius: 15px;
+            }
+            .tablet-screen {
+                border-radius: 10px;
+            }
+        }
     </style>
-</head>
-
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>
+    .features li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        list-style: none;
+        padding-left: 0;
+    }
+    .features {
+        padding-left: 0;
+    }
+    .feature-icon {
+        color: rgb(39, 105, 197);
+        font-size: 24px;
+        flex-shrink: 0;
+    }
+</style></head>
 <body>
-
 <header>
-    <div class="header-content">
-
-        <img src="images/Logo3.png" alt="AngleUp Logo" class="logo-center">
-
-        <h1>AngleUp</h1>
-        <p2>Analysiere deine Bewegungen. Verbessere deine Technik.</p2>
-
-        <a class="appstore-button" href="https://apps.apple.com/DEIN-LINK">
-            <span class="apple-logo"></span>
-            <span>Im App Store laden</span>
-        </a>
-
-    </div>
+<div class="header-content" style="display: flex; flex-direction: column; align-items: center;">
+<img alt="AngleUp Logo" class="logo-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1vtbBYT5FVgCk81cFlo_WxpZzln7DDvGXRZHRn1j7Xwim9HEiVMg71bvUWICdiNuwnSfM75E8ENqB11QM4R-t3LspVoA6z02Mdvlo-vblOfZz5pbwlZ9B6e9mfNA4jGQ5gXvZex4dvY-Ohh32bQ6VvcJiu9I4EIxKJxKDMqDpOVWxP9ri0gH82j0bS7jG1yJK5P-CfDxI9AnfVRaGK4FdxSHSHldpjfjgv3Yu9F_RqwAMiHQPoDGhHkLqMSHD7huWTc8ghvKtYRc"/>
+<h1>AngleUp</h1>
+<p2>Analysiere deine Bewegungen. Verbessere deine Technik.</p2>
+<a class="appstore-button" href="https://apps.apple.com/DEIN-LINK" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+<span class="apple-logo"><svg fill="currentColor" height="24" style="display: block;" viewbox="0 0 384 512" width="24"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path></svg></span>
+<span>Im App Store laden</span>
+</a>
+</div>
 </header>
-
-    <div class="section">
-        <h2>Was ist AngleUp?</h2>
-        <p>
+<div class="section">
+<h2>Was ist AngleUp?</h2>
+<p>
             AngleUp ist eine App für den Breiten- und Schulsport, mit der du
             Gelenkwinkel bei sportlichen Bewegungen messen kannst. 
             Beispielsweise das Abklappen des Handgelenks und die Kniebeuge beim Basketballwurf. 
             Die Bewegungsanalyse dient der Trainingsunterstützung und Technikverbesserung durch visuelles Feedback und qualitativen Messwerten.
         </p>
-    </div>
-
-    <!-- iPhone Mockup -->
-    <div class="section">
-        <h2>Oberfläche der App</h2>
-
-<div class="tablet">
-    <div class="tablet-screen">
-        <img src="images/App.png" alt="App Screenshot">
-    </div>
 </div>
-        
-    </div>
-
-    <div class="section">
-        <h2>Funktionen</h2>
-
-        <ul class="features">
-            <li>📐 Messung von Gelenkwinkeln aus Kurzvideos der Mediathek</li>
-            <li>🎥 Videoexport mit Gelenkwinkeln für Präsentationen</li>
-            <li>📊 Zeitverlauf der Bewegungen als Diagramm</li>
-            <li>📁 Export als Excel-Datei</li>
-
-        </ul>
-    </div>
-
-
-    <div class="section">
-        <h2>Einsatz in der Schule</h2>
-
-        <ul class="features">
-            <li>🎓 Förderung der curricularen Schulvorgaben im Bereich Bewegungsalalyse </li>
-            <li>🎓 Einsetzbar zur Entwicklung von Funktionsphasenmodellen in kooperativen Unterrichtsformen </li>
-        </ul>
-    </div>
-
-
-
-    
-
-
-    
-    <footer>
-        <h2>Impressum</h2>
-        <p>
-            AngleUp<br>
-            Tobias Creutzburg<br>
-            Paulstraße 7<br>
-            30167 Hannover<br><br>
-
+<!-- iPhone Mockup -->
+<div class="section">
+<h2>Oberfläche der App</h2>
+<div class="tablet">
+<div class="tablet-screen">
+<img alt="App Screenshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKaWDIWFf7LsbhmiDmuAjCfg6tMONOBTiLLZAr8uWDibV4q_AkwrZzuFyq2fhu9RGMI2jTr5EBBL75kJJJyDAcKRRstVfgxtMPNk47bFn-aYmXH53SmXef0p2nL_liI1gODpDV20Vxkk72wLPQoNxz4Ea5-di0Rf2-EXwQSEKWypuJxplVGnDcS_4B9qK4_iAp0Mjym-EsI0z5mvRyWPBKSkRUlKgWGtdE_PrCzZHt_sAihmXgxRHpwqzUK7AydCuqnO3dPPsdc90"/>
+</div>
+</div>
+</div>
+<div class="section">
+<h2>Funktionen</h2>
+<ul class="features">
+<li><span class="material-symbols-outlined feature-icon">straighten</span><span>Messung von Gelenkwinkeln aus Kurzvideos der Mediathek</span></li>
+<li><span class="material-symbols-outlined feature-icon">video_library</span><span>Videoexport mit Gelenkwinkeln für Präsentationen</span></li>
+<li><span class="material-symbols-outlined feature-icon">bar_chart</span><span>Zeitverlauf der Bewegungen als Diagramm</span></li>
+<li><span class="material-symbols-outlined feature-icon">table_chart</span><span>Export als Excel-Datei</span></li>
+</ul>
+</div>
+<div class="section">
+<h2>Einsatz in der Schule</h2>
+<ul class="features">
+<li><span class="material-symbols-outlined feature-icon">school</span><span>Förderung der curricularen Schulvorgaben im Bereich Bewegungsalalyse</span></li>
+<li><span class="material-symbols-outlined feature-icon">school</span><span>Einsetzbar zur Entwicklung von Funktionsphasenmodellen in kooperativen Unterrichtsformen</span></li>
+</ul>
+</div>
+<footer>
+<h2>Impressum</h2>
+<p>
+            AngleUp<br/>
+            Tobias Creutzburg<br/>
+            Paulstraße 7<br/>
+            30167 Hannover<br/><br/>
             E-Mail: Angleup@web.de
         </p>
-    </footer>
-
+</footer>
 </body>
 </html>
