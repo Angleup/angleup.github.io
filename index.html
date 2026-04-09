@@ -74,6 +74,23 @@
         },
       }
     </script>
+
+
+
+<script>
+  // Button öffnet / schließt das mobile Menü
+  const btn = document.getElementById("mobileMenuBtn");
+  const menu = document.getElementById("mobileMenu");
+  
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>
+
+
+
+
+      
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -103,16 +120,31 @@
 <span class="text-xl font-black text-[#191c1d] dark:text-white uppercase tracking-wider font-headline">AngleUp</span>
 </div>
 <a class="hidden md:block text-[#003d9b] dark:text-blue-400 font-bold border-b-2 border-[#003d9b] font-label" href="https://www.apple.com/de/app-store/">Download Now</a>
+
+
+      <!-- Button alt 
 <button class="md:hidden p-2 rounded-full hover:bg-surface-container-low transition-colors active-press">
 <span class="material-symbols-outlined" data-icon="menu">menu</span>
 </button>
+-->
+    <!-- Mobile Menü-Button -->
+    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-full hover:bg-surface-container-low transition-colors active-press">
+      <span class="material-symbols-outlined text-2xl" data-icon="menu">menu</span>
+    </button>
+
+    <!-- Mobile Dropdown Menü -->
+    <div id="mobileMenu" class="hidden flex-col absolute top-16 right-6 w-48 bg-surface p-4 rounded-lg shadow-lg space-y-2">
+    <a href="#about" class="py-2 px-2 block text-[#003d9b] hover:bg-primary/10 rounded">Allgemein</a> 
+      <a href="#features" class="py-2 px-2 block text-[#003d9b] hover:bg-primary/10 rounded">Funktionen</a>
+      <a href="#Education" class="py-2 px-2 block text-[#003d9b] hover:bg-primary/10 rounded">Für Schulen</a>
+      <a href="#validierung" class="py-2 px-2 block text-[#003d9b] hover:bg-primary/10 rounded">Validierung</a>
+    </div>
+
+      
+      
 </nav>
 </header>
 <main class="pt-20">
-
-
-
-
 <!-- Hero Section -->
 <section class="px-6 py-16 md:py-24 bg-surface relative overflow-hidden" >
   <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
