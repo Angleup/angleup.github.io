@@ -1,578 +1,643 @@
 <!DOCTYPE html>
+<html class="scroll-smooth" lang="de">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>AngleUp | Analysiere deine Bewegungen</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
-<html class="scroll-smooth" lang="de"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>AngleUp | Analysiere deine Bewegungen</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "surface-container": "#edeeef",
-              "surface-container-high": "#e7e8e9",
-              "on-surface-variant": "#434654",
-              "on-secondary-fixed": "#021f29",
-              "error": "#ba1a1a",
-              "surface-tint": "#0c56d0",
-              "secondary-fixed-dim": "#afcbd8",
-              "outline-variant": "#c3c6d6",
-              "surface-variant": "#e1e3e4",
-              "on-tertiary-container": "#ffc6b2",
-              "surface-dim": "#d9dadb",
-              "surface-container-lowest": "#ffffff",
-              "surface-container-low": "#f3f4f5",
-              "on-error-container": "#93000a",
-              "on-primary-fixed-variant": "#0040a2",
-              "background": "#f8f9fa",
-              "surface": "#f8f9fa",
-              "primary-fixed-dim": "#b2c5ff",
-              "on-surface": "#191c1d",
-              "error-container": "#ffdad6",
-              "on-secondary-fixed-variant": "#304a55",
-              "secondary-fixed": "#cbe7f5",
-              "primary-container": "#0052cc",
-              "on-primary": "#ffffff",
-              "outline": "#737685",
-              "inverse-on-surface": "#f0f1f2",
-              "tertiary-fixed": "#ffdbcf",
-              "primary-fixed": "#dae2ff",
-              "on-primary-container": "#c4d2ff",
-              "surface-container-highest": "#e1e3e4",
-              "inverse-primary": "#b2c5ff",
-              "surface-bright": "#f8f9fa",
-              "tertiary-container": "#a33500",
-              "inverse-surface": "#2e3132",
-              "on-tertiary-fixed": "#380d00",
-              "secondary-container": "#cbe7f5",
-              "on-background": "#191c1d",
-              "secondary": "#48626e",
-              "tertiary-fixed-dim": "#ffb59b",
-              "primary": "#003d9b",
-              "tertiary": "#7b2600",
-              "on-tertiary": "#ffffff",
-              "on-error": "#ffffff",
-              "on-secondary": "#ffffff",
-              "on-secondary-container": "#4e6874",
-              "on-tertiary-fixed-variant": "#812800",
-              "on-primary-fixed": "#001848"
-            },
-            fontFamily: {
-              "headline": ["Manrope"],
-              "body": ["Inter"],
-              "label": ["Inter"]
-            },
-            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "1rem", "full": "9999px"},
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container": "#edeeef",
+            "surface-container-high": "#e7e8e9",
+            "on-surface-variant": "#434654",
+            "on-secondary-fixed": "#021f29",
+            "error": "#ba1a1a",
+            "surface-tint": "#0c56d0",
+            "secondary-fixed-dim": "#afcbd8",
+            "outline-variant": "#c3c6d6",
+            "surface-variant": "#e1e3e4",
+            "on-tertiary-container": "#ffc6b2",
+            "surface-dim": "#d9dadb",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f3f4f5",
+            "on-error-container": "#93000a",
+            "on-primary-fixed-variant": "#0040a2",
+            "background": "#f8f9fa",
+            "surface": "#f8f9fa",
+            "primary-fixed-dim": "#b2c5ff",
+            "on-surface": "#191c1d",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed-variant": "#304a55",
+            "secondary-fixed": "#cbe7f5",
+            "primary-container": "#0052cc",
+            "on-primary": "#ffffff",
+            "outline": "#737685",
+            "inverse-on-surface": "#f0f1f2",
+            "tertiary-fixed": "#ffdbcf",
+            "primary-fixed": "#dae2ff",
+            "on-primary-container": "#c4d2ff",
+            "surface-container-highest": "#e1e3e4",
+            "inverse-primary": "#b2c5ff",
+            "surface-bright": "#f8f9fa",
+            "tertiary-container": "#a33500",
+            "inverse-surface": "#2e3132",
+            "on-tertiary-fixed": "#380d00",
+            "secondary-container": "#cbe7f5",
+            "on-background": "#191c1d",
+            "secondary": "#48626e",
+            "tertiary-fixed-dim": "#ffb59b",
+            "primary": "#003d9b",
+            "tertiary": "#7b2600",
+            "on-tertiary": "#ffffff",
+            "on-error": "#ffffff",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#4e6874",
+            "on-tertiary-fixed-variant": "#812800",
+            "on-primary-fixed": "#001848"
+          },
+          fontFamily: {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "1rem",
+            "full": "9999px"
           },
         },
-      }
-    </script>
+      },
+    }
+  </script>
 
-
-
-
-
-
-
-      
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
-        .active-press:active {
-            transform: scale(0.98);
-            transition: transform 0.1s ease;
-        }
-    </style>
-<style>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .active-press:active {
+      transform: scale(0.98);
+      transition: transform 0.1s ease;
+    }
     body {
       min-height: max(884px, 100dvh);
     }
-  </style>
-  </head>
-<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary">
-<!-- TopAppBar -->
-<header class="fixed top-0 left-0 right-0 z-50 bg-[#f8f9fa] dark:bg-slate-900">
-<nav class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[#003d9b] dark:text-blue-400" data-icon="signal_cellular_alt">signal_cellular_alt</span>
-<span class="text-xl font-black text-[#191c1d] dark:text-white uppercase tracking-wider font-headline">AngleUp</span>
-</div>
-<a class="hidden md:block text-[#003d9b] dark:text-blue-400 font-bold border-b-2 border-[#003d9b] font-label" href="https://www.apple.com/de/app-store/">Download Now</a>
-
-
-      <!-- Button alt 
-<button class="md:hidden p-2 rounded-full hover:bg-surface-container-low transition-colors active-press">
-<span class="material-symbols-outlined" data-icon="menu">menu</span>
-</button>
--->
-    <!-- Mobile Menü-Button -->
-    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-full hover:bg-surface-container-low transition-colors active-press">
-      <span class="material-symbols-outlined text-2xl" data-icon="menu">menu</span>
-    </button>
-
-    <!-- Mobile Dropdown Menü -->
-    <div id="mobileMenu" class="hidden flex-col absolute top-16 right-6 w-48 bg-surface p-4 rounded-lg shadow-lg space-y-2">
-    <a href="#about" class="py-2 px-2 block text-[#003d9b] hover:bg-primary/10 rounded">Allgemein</a> 
-      <a href="#features" class="py-2 px-2 block text-[#003d9b] hover:bg-primary/10 rounded">Funktionen</a>
-      <a href="#Education" class="py-2 px-2 block text-[#003d9b] hover:bg-primary/10 rounded">Für Schulen</a>
-      <a href="#validation" class="py-2 px-2 block text-[#003d9b] hover:bg-primary/10 rounded">Validierung</a>
-    </div>
-
-      
-      
-</nav>
-</header>
-<main class="pt-20">
-<!-- Hero Section -->
-<section class="px-6 py-16 md:py-24 bg-surface relative overflow-hidden" >
-  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-    
-    <!-- TEXT -->
-    <div class="z-10">
-      <h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight leading-tight mb-6">
-        AngleUp
-      </h1>
-
-      <p class="text-xl md:text-2xl text-on-surface-variant mb-10 max-w-lg leading-relaxed">
-        Analysiere deine Bewegungen. Verbessere deine Technik.
-      </p>
-
-      <!-- BUTTON 
-      <div class="flex flex-wrap gap-4">
-        <button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-semibold active-press flex items-center gap-3 shadow-xl shadow-primary/20">
-          
-          <span class="apple-logo flex items-center">
-            <svg viewBox="0 0 384 512" width="20" height="20" fill="currentColor">
-              <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path>
-            </svg>
-          </span>
-
-          Im App Store laden
-        </button>
-      </div>
-    </div>
--->
-
-<!-- BUTTON -->
-<div class="flex flex-wrap gap-4">
-  <a 
-    href="https://apps.apple.com" 
-    target="_blank"
-    class="bg-primary text-on-primary px-8 py-4 rounded-xl font-semibold active-press flex items-center gap-3 shadow-xl shadow-primary/20"
-  >
-    
-    <span class="apple-logo flex items-center">
-      <svg viewBox="0 0 384 512" width="20" height="20" fill="currentColor">
-        <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path>
-      </svg>
-    </span>
-
-    Im App Store laden
-  </a>
-</div>
-</div>
-
-
-
-
-
-    <!-- BILD -->
-    <div class="relative">
-      <div class="absolute -top-20 -right-20 w-80 h-80 bg-primary-container/10 rounded-full blur-3xl"></div>
-
-      
-
-      <div class="bg-black p-4 rounded-[2rem] shadow-2xl rotate-3 transform transition-transform hover:rotate-0 duration-700">
-        <img 
-          src="images/App2.png"
-          class="rounded-[1.5rem] w-full h-auto"
-          alt="App Mockup"
-        />
-      
-    </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- About Section -->
-<section class="bg-surface-container-low py-24 px-6" id="about">
-<div class="max-w-7xl mx-auto">
-<div class="flex flex-col md:flex-row gap-16 items-center">
-<div class="flex-1 order-2 md:order-1">
-<div class="grid grid-cols-2 gap-4">
-<div class="bg-surface p-1 rounded-xl shadow-sm aspect-square overflow-hidden">
-<img class="w-full h-full object-cover rounded-lg" data-alt="close up of a basketball player preparing a shot with focus on the arm alignment and form" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq5EkoaPBKrup1orHmY5crYj-n1e9IXF7wy7fYp0aN8xRIRj-zWojqjdvnjf-yMvw2VPXLYHRmI7TccEV-d0sglQSTZizNA3sjJdR_PLzMVwc1Pjfnee81Wik4Vr6QeD4wsqbX3IQLjOcCJ_UDn7FMK4qwgd83AbArKS8OD_lODVu-ahY5Qvp-7jVhuH006l3b0sxkvqG03FuT35kIIy3oMepn8LFrqv3icC8Tc4qq4-VdL_g4hxzf7jPX8IPc-pThzzSgvkhxC54"/>
-</div>
-<div class="bg-surface p-1 rounded-xl shadow-sm aspect-square overflow-hidden mt-8">
-<img class="w-full h-full object-cover rounded-lg" data-alt="athlete performing a jumping motion with motion blur effect and high dynamic contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMsmyMx5Zfvc637AS9TKR9iQgP3DkO81Gs2HEr4G--yMj42a-i-9IL1QPZEM67Sf_7JsVt2clyT4HeU2o_4cAqF2ziKn_yvqjWmYw0fB5kCV-o7EcnJBzt2ZuKOU8xMp-VSEC0quphtX3Pe5cKomcIArXySVamUxSuYsWn_2eZsOHKScNOOI1RYHcEsIkd-72KSxVXV8m5oMCMrQ5HwaMwkXQgTZnF9U0eKwOXTvutewHRGGwFVu5XpF4cV44ptuWXCFcdPZlprhI"/>
-</div>
-</div>
-</div>
-<div class="flex-1 order-1 md:order-2">
-<span class="text-primary font-bold uppercase tracking-widest text-sm font-label mb-4 block">Präzision</span>
-<h2 class="font-headline text-4xl font-extrabold mb-8">Was ist AngleUp?</h2>
-<p class="text-on-surface-variant text-lg leading-relaxed mb-8">
-                            AngleUp ist eine App für den Breiten- und Schulsport, mit der die Gelenkwinkel bei sportlichen Bewegungen gemessen werden. Beispielsweise kann das Abklappen des Handgelenks und die Kniebeuge beim Basketballwurf aufgezeichnet werden. Die Bewegungsanalyse dient der Trainingsunterstützung und Technikverbesserung durch qualitative Messwerte und visuelles Feedback.
-                        </p>
-
-</div>
-
-
-</section>
-<!-- FUNKTIONEN SECTION - BENTO STYLE -->
-<section class="py-24 px-6 bg-surface" id="features">
-  <div class="max-w-7xl mx-auto">
-
-    <div class="text-center mb-16">
-      <span class="text-primary font-bold uppercase tracking-widest text-sm font-label mb-4 block">
-        Capabilities
-      </span>
-      <h2 class="font-headline text-4xl md:text-5xl font-extrabold">
-        Funktionen
-      </h2>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-6 md:grid-rows-2 gap-6">
-
-      <!-- Messung -->
-      <div class="md:col-span-3 bento-card bg-surface-container-low p-8 rounded-2xl border border-outline-variant/20 hover:shadow-xl transition">
-        
-        <div class="flex items-center gap-4 mb-4">
-          <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center">
-            <span class="material-symbols-outlined text-2xl">straighten</span>
-          </div>
-          <h3 class="font-headline font-extrabold text-xl">Winkelmessung</h3>
-        </div>
-
-        <p class="text-on-surface-variant">
-          Präzise Bestimmung von Gelenkwinkeln direkt aus Kurzvideos deiner Mediathek.
-        </p>
-      </div>
-
-      <!-- Zeitlupe -->
-      <div class="md:col-span-3 bento-card bg-surface-container-low p-8 rounded-2xl border border-outline-variant/20 hover:shadow-xl transition">
-        
-        <div class="flex items-center gap-4 mb-4">
-          <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center">
-            <span class="material-symbols-outlined text-2xl">hourglass_empty</span>
-          </div>
-          <h3 class="font-headline font-extrabold text-xl">Zeitlupen-Analyse</h3>
-        </div>
-
-        <p class="text-on-surface-variant">
-          Analysiere komplexe Bewegungsabläufe in Zeitlupe oder in Standbildern.
-        </p>
-      </div>
-
-      <!-- Video Export -->
-      <div class="md:col-span-2 bento-card bg-surface-container-low p-6 rounded-2xl border border-outline-variant/20 hover:shadow-xl transition">
-        
-        <div class="flex items-center gap-3 mb-3">
-          <div class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center">
-            <span class="material-symbols-outlined text-xl">video_library</span>
-          </div>
-          <h3 class="font-headline font-bold text-lg">Videoexport</h3>
-        </div>
-
-        <p class="text-sm text-on-surface-variant">
-          Exportiere Videos mit eingeblendeten Winkeln für Präsentationen.
-        </p>
-      </div>
-
-      <!-- Diagramm -->
-      <div class="md:col-span-2 bento-card bg-surface-container-low p-6 rounded-2xl border border-outline-variant/20 hover:shadow-xl transition">
-        
-        <div class="flex items-center gap-3 mb-3">
-          <div class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center">
-            <span class="material-symbols-outlined text-xl">bar_chart</span>
-          </div>
-          <h3 class="font-headline font-bold text-lg">Zeitverlauf</h3>
-        </div>
-
-        <p class="text-sm text-on-surface-variant">
-          Visualisiere Bewegungen in übersichtlichen Diagrammen.
-        </p>
-      </div>
-
-      <!-- Excel -->
-      <div class="md:col-span-2 bento-card bg-surface-container-low p-6 rounded-2xl border border-outline-variant/20 hover:shadow-xl transition">
-        
-        <div class="flex items-center gap-3 mb-3">
-          <div class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center">
-            <span class="material-symbols-outlined text-xl">table_chart</span>
-          </div>
-          <h3 class="font-headline font-bold text-lg">Excel Export</h3>
-        </div>
-
-        <p class="text-sm text-on-surface-variant">
-          Exportiere Rohdaten für wissenschaftliche Analysen.
-        </p>
-      </div>
-
-    </div>
-  </div>
-
-      
-</section>
-<!-- Education Section -->
-<section class="py-24 px-6 bg-surface" id="Education">
-<div class="max-w-7xl mx-auto bg-primary-container rounded-[2rem] overflow-hidden flex flex-col lg:flex-row shadow-2xl">
-<div class="flex-1 p-12 md:p-16 text-on-primary">
-<span class="inline-block px-4 py-1 bg-gray-400 rounded-full text-xs font-bold uppercase tracking-widest mb-6">Für Schulen</span>
-<h2 class="font-headline text-4xl md:text-5xl font-extrabold mb-8 leading-tight">Einsatz in der Schule</h2>
-<p class="text-on-primary-container text-lg leading-relaxed mb-10">
-                        AngleUp dient als digitales Methodenwerkzeug der Optimierung von Unterrichtssequenzen in vielen Dimensionen. Durch die gemeinsame visuelle Aufbereitung technischer Details fördern wir das kooperative Lernen und folgen dabei den Lehrvorgaben der Länder.
-                    </p>
-<ul class="space-y-4">
-   
-<li class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary-fixed" data-icon="check_circle">check_circle</span>
-<span>Zeitlupe, Messwerte und Standbilder ermöglichen objektive Bewegungsanalyse </span>
-</li>
-      
-<li class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary-fixed" data-icon="check_circle">check_circle</span>
-<span>Sichtbares Feedback von Details, die im normalen Bewegungsablauf kaum erkennbar sind </span>
-</li>
-<li class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary-fixed" data-icon="check_circle">check_circle</span>
-<span>Komplexe Bewegungen einfach verständlich machen </span>
-</li>
-<li class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary-fixed" data-icon="check_circle">check_circle</span>
-<span>Entwicklung konkreter Strategien zur eigenständigen Verbesserung der Bewegung</span>
-</li>
-<li class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary-fixed" data-icon="check_circle">check_circle</span>
-<span>Vergleich mit Idealmodellen zur Technikverbesserung </span>
-</li>
-<li class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary-fixed" data-icon="check_circle">check_circle</span>
-<span>Entwicklung und Vergleich eigener Funktionsphasenmodelle</span>
-</li>
-<li class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary-fixed" data-icon="check_circle">check_circle</span>
-<span>Unterstützt individuelle Lernwege auf jedem Leistungsniveau</span>
-</li>
-<li class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary-fixed" data-icon="check_circle">check_circle</span>
-<span>Einsatz in kooperativen Lernformen</span>
-</li>
-<li class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary-fixed" data-icon="check_circle">check_circle</span>
-<span>Analyse in Partner- oder Kleingruppenarbeit</span>
-</li>
-<li class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary-fixed" data-icon="check_circle">check_circle</span>
-<span>Förderung von Fachkompetenz und Fachsprache</span>
-</li>
-<li class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary-fixed" data-icon="check_circle">check_circle</span>
-<span>Förderung der Reflexionsfähigkeit </span>
-</li>
-<li class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary-fixed" data-icon="check_circle">check_circle</span>
-<span>Förderung der Sozialkompetenz durch die Formulierung und Annahme von konstruktivem Feedback</span>
-</li>
-<li class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary-fixed" data-icon="check_circle">check_circle</span>
-<span>Objektive Notengebung durch digitale Abgaben mit Messwerten</span>
-</li>
-</ul>
-</div>
-<div class="flex-1 min-h-[400px]">
-<img class="w-full h-full object-cover" data-alt="dynamic shot of teenagers in a modern school gym using digital tablets to record and analyze each other's sports performance" src="images/B2.png"/>
-</div>
-</div>
-
-<!-- Validierung1
-</section>
-<div class="section">
-<h2>Wie genau sind die Messdaten?</h2>
-<p>
-        Das Framework der App wurde in einer Studie von Francia et al. (2024) mit dem etablierten System Xsens von Movella verglichen. Die Ergebnisse zeigen, dass der Algorithmus Bewegungsverläufe über die Zeit realitätsnah und zuverlässig abbildet. Ein direkter Vergleich verdeutlicht die hohe Übereinstimmung beider Systeme am Beispiel einer Kniebeuge.
-    </p>
-<img alt="Vergleichsmessung Diagramm" class="section-img" src="images/Val.png">
- <p>
-Vergleich des Kniegelenkwinkels vom App-Framework mit dem System Xsens bei einer Kniebeuge. Aus: Francia et al. (2024)
-<p>
-<p>
-Tabelle 1) zeigt die Korrelationskoeffizienten sowie den absoluten mittleren Abstand (Bias) der Vergleichskurven für die Knie-, Hüft-, Schulter- und Ellenbogengelenke. Die mittleren Anstände aller Gelenke für die Bland-Altman-Analyse liegen betragsmäßig unter 10°.
-<img alt="Tabelle" class="section-img2" src="images\Tab.png">
-Statistische Werte bei der Validierung des App-Frameworks mit Xsens. Aus: Francia et al. (2024)       
-<p>
-        <p>
-                  <p>
-        [1] Francia, C. et al. (2024). Validation of a MediaPipe System for Markerless Motion Analysis During Virtual Reality Rehabilitation. In: De Paolis, L.T., Arpaia, P., Sacco, M. (eds) Extended Reality. XR Salento 2024. Lecture Notes in Computer Science, vol. 15029. Springer, Cham. <a href="https://doi.org/10.1007/978-3-031-71710-9_3">
-  Zum Artikel
-</a>
-
-</p>
-</div>
--->
-
-</section>
-<!-- VALIDIERUNG SECTION - MODERN SCHOLARLY LAYOUT -->
-<section class="py-24 px-6 bg-surface-container-low" id="validation">
-<div class="max-w-7xl mx-auto">
-<div class="mb-16 text-center md:text-left">
-<span class="text-primary font-bold uppercase tracking-widest text-sm font-label mb-4 block">Wissenschaftlich fundiert</span>
-<h2 class="font-headline text-4xl md:text-5xl font-extrabold mb-6">Wie genau sind die Messdaten?</h2>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-<!-- Left Column: Explanation -->
-<div class="space-y-8">
-<div class="prose prose-lg text-on-surface-variant">
-<p class="text-lg leading-relaxed">Das Framework der App wurde in der Studie von <strong>Francia et al. (2024)</strong> mit dem etablierten <strong>Xsens System von Movella</strong> verglichen. Die Ergebnisse zeigen, dass der Algorithmus Bewegungsverläufe über die Zeit realitätsnah und zuverlässig abbildet.</p>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div class="bg-surface p-6 rounded-xl border border-outline-variant/20">
-<p class="text-3xl font-black text-primary mb-1">R ≈ 0,7</p>
-<p class="text-sm font-bold text-on-surface">Starke Korrelation </p>
-<p class="text-xs text-on-surface-variant">Gute Übereinstimmung mit den Sensordaten des Referenzsystems.</p>
-</div>
-<div class="bg-surface p-6 rounded-xl border border-outline-variant/20">
-<p class="text-3xl font-black text-primary mb-1">&lt;6°</p>
-<p class="text-sm font-bold text-on-surface">geringe Abweichung</p>
-<p class="text-xs text-on-surface-variant">Der mittlere Bias liegt zwischen 3°-6°.</p>
-</div>
-</div>
-<div class="pt-8 border-t border-outline-variant/30">
-<p class="text-sm font-bold text-on-surface mb-2">Referenz:</p>
-<p class="text-sm text-on-surface-variant leading-relaxed">[1] Francia, C., et al. (2024).Validation of a MediaPipe System for Markerless Motion Analysis During Virtual Reality Rehabilitation. In: De Paolis, L.T., Arpaia, P., Sacco, M. (eds) Extended Reality. XR Salento 2024. Lecture Notes in Computer Science, vol. 15029. Springer, Cham.</p>
-<a class="inline-flex items-center gap-2 text-primary font-bold hover:underline mt-4" href="https://doi.org/10.1007/978-3-031-71710-9_3" target="_blank">
-            Zum Artikel 
-            <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
-</a>
-</div>
-</div>
-<!-- Right Column: Visual Data -->
-<div class="space-y-12">
-<!-- Diagram Block -->
-<div class="group">
-<div class="bg-white p-4 rounded-2xl shadow-sm border border-outline-variant/10 overflow-hidden mb-4">
-<img alt="Vergleichsmessung Diagramm" class="w-full h-auto rounded-lg transform transition-transform group-hover:scale-[1.02] duration-500" src="images/Val.png"/>
-</div>
-<p class="text-sm text-on-surface-variant italic px-2">
-<strong class="text-on-surface">Diagramm:</strong> Vergleich des Kniegelenkwinkels vom App-Framework mit dem Xsens-System bei einer Kniebeuge. Die Messung verdeutlicht die hohe Übereinstimmung beider Systeme (Francia et al. 2024).
-            </p>
-</div>
-<!-- Table Block -->
-<div class="group">
-<div class="bg-white p-4 rounded-none shadow-sm border border-outline-variant/10 overflow-hidden mb-4">
-<img alt="Statistische Tabelle" class="w-full h-auto rounded-none transform transition-transform group-hover:scale-[1.02] duration-500" src="images/Tab.png"/>
-</div>
-<p class="text-sm text-on-surface-variant italic px-2">
-<strong class="text-on-surface">Tabelle:</strong> Statistische Kennwerte bei der Validierung des App-Frameworks mit Xsens. (Francia et al. 2024)
-            </p>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</section>
-<!-- Footer -->
-<footer class="bg-[#f3f4f5] dark:bg-slate-950 w-full py-16 px-8 mt-auto">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
-<div class="md:col-span-1">
-<span class="text-lg font-bold text-[#191c1d] dark:text-white mb-6 block font-headline">AngleUp</span>
-<p class="text-slate-500 dark:text-slate-500 font-body text-sm leading-relaxed">
-                    Bewegungsanalyse für den Schul- und Breitensport.
-                </p>
-</div>
-<div>
-<h4 class="text-[#003d9b] font-bold text-sm uppercase tracking-[5%] mb-6 font-label">Links</h4>
-<ul class="space-y-4">
-<li><a class="text-slate-500 hover:text-[#003d9b] dark:hover:text-blue-400 transition-all font-body text-sm uppercase tracking-[5%]" href="#features">Features</a></li>
-<li><a class="text-slate-500 hover:text-[#003d9b] dark:hover:text-blue-400 transition-all font-body text-sm uppercase tracking-[5%]" href="#Education">Educational Use</a></li>
-<li><a class="text-slate-500 hover:text-[#003d9b] dark:hover:text-blue-400 transition-all font-body text-sm uppercase tracking-[5%]" href="https://www.apple.com/de/app-store/">App Store</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-[#003d9b] font-bold text-sm uppercase tracking-[5%] mb-6 font-label">Rechtliches</h4>
-<ul class="space-y-4">
-<li><a class="text-slate-500 hover:text-[#003d9b] dark:hover:text-blue-400 transition-all font-body text-sm uppercase tracking-[5%]" href="privacy.html" target="_blank">Privacy Policy</a></li>
-<li><a class="text-slate-500 hover:text-[#003d9b] dark:hover:text-blue-400 transition-all font-body text-sm uppercase tracking-[5%]" href="terms.html" target="_blank">Terms of Service</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-[#003d9b] font-bold text-sm uppercase tracking-[5%] mb-6 font-label">Impressum</h4>
-<address class="not-italic text-slate-500 dark:text-slate-500 font-body text-sm space-y-2">
-<p class="font-bold text-on-surface">AngleUp</p>
-<p>Paulstraße 7</p>
-<p>30167 Hannover</p>
-
-      <!-- Footer 
-<p class="pt-2">E-Mail: <span class="text-primary underline">Angleup@web.de</span></p>-->
-      
-<p class="pt-2">
-  E-Mail: 
-  <a href="mailto:Angleup@web.de" class="text-primary underline">
-    Angleup@web.de
-  </a>
-</p>
-      
-</address>
-</div>
-</div>
-<div class="max-w-7xl mx-auto pt-16 mt-16 border-t border-outline-variant/10">
-<p class="text-slate-500 dark:text-slate-500 font-body text-sm uppercase tracking-[5%] text-center">
-                © 2025 AngleUp Performance Analysis. All rights reserved.
-            </p>
-</div>
-</footer>
-
-
- 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const btn = document.getElementById("mobileMenuBtn");
-  const menu = document.getElementById("mobileMenu");
-
-  // Menü öffnen / schließen beim Button-Klick
-  btn.addEventListener("click", (e) => {
-    menu.classList.toggle("hidden");
-    e.stopPropagation(); // verhindert, dass der Klick direkt das "click outside" triggert
-  });
-
-  // Klick irgendwo außerhalb schließt das Menü
-  document.addEventListener("click", (e) => {
-    if (!menu.contains(e.target) && !btn.contains(e.target)) {
-      menu.classList.add("hidden");
+    .lang-btn-active {
+      color: #003d9b;
+      font-weight: 800;
     }
-  });
-});
-</script>
+  </style>
+</head>
 
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary">
+
+  <!-- TopAppBar -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#f8f9fa] dark:bg-slate-900">
+    <nav class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
       
-</body></html>
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-[#003d9b] dark:text-blue-400" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+        <span class="text-xl font-black text-[#191c1d] dark:text-white uppercase tracking-wider font-headline">AngleUp</span>
+      </div>
+
+      <div class="hidden md:flex items-center gap-4">
+        <div class="flex items-center gap-2 bg-surface-container-low px-3 py-2 rounded-full border border-outline-variant/30 mr-10">
+          <button onclick="setLanguage('de')" class="flex items-center gap-2 font-semibold text-sm hover:opacity-80 transition" id="btn-de" type="button">
+            🇩🇪 <span>DEU</span>
+          </button>
+          <span class="text-outline">|</span>
+          <button onclick="setLanguage('en')" class="flex items-center gap-2 font-semibold text-sm hover:opacity-80 transition" id="btn-en" type="button">
+            🇬🇧 <span>ENG</span>
+          </button>
+        </div>
+
+        <a class="text-[#003d9b] dark:text-blue-400 font-bold border-b-2 border-[#003d9b] font-label" href="https://www.apple.com/de/app-store/" id="downloadNow">
+          Download Now
+        </a>
+      </div>
+
+      <button id="mobileMenuBtn" class="md:hidden p-2 rounded-full hover:bg-surface-container-low transition-colors active-press">
+        <span class="material-symbols-outlined text-2xl" data-icon="menu">menu</span>
+      </button>
+
+      <div id="mobileMenu" class="hidden flex-col absolute top-16 right-6 w-56 bg-surface p-4 rounded-lg shadow-lg space-y-2">
+        <div class="flex items-center justify-center gap-4 pb-2 border-b border-outline-variant/30">
+          <button onclick="setLanguage('de')" class="py-1 px-2 rounded hover:bg-primary/10" id="btn-de-mobile" type="button">🇩🇪 DEU</button>
+          <button onclick="setLanguage('en')" class="py-1 px-2 rounded hover:bg-primary/10" id="btn-en-mobile" type="button">🇬🇧 ENG</button>
+        </div>
+        <a href="#about" class="py-2 px-2 block text-[#003d9b] hover:bg-primary/10 rounded" id="mobileNavAbout">Allgemein</a>
+        <a href="#features" class="py-2 px-2 block text-[#003d9b] hover:bg-primary/10 rounded" id="mobileNavFeatures">Funktionen</a>
+        <a href="#Education" class="py-2 px-2 block text-[#003d9b] hover:bg-primary/10 rounded" id="mobileNavEducation">Für Schulen</a>
+        <a href="#validation" class="py-2 px-2 block text-[#003d9b] hover:bg-primary/10 rounded" id="mobileNavValidation">Validierung</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="pt-20">
+
+    <!-- Hero Section -->
+    <section class="px-6 py-16 md:py-24 bg-surface relative overflow-hidden">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="z-10">
+          <h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight leading-tight mb-6">
+            AngleUp
+          </h1>
+
+          <p class="text-xl md:text-2xl text-on-surface-variant mb-10 max-w-lg leading-relaxed" id="heroSubtitle">
+            Analysiere deine Bewegungen. Verbessere deine Technik.
+          </p>
+
+          <div class="flex flex-wrap gap-4">
+            <a 
+              href="https://apps.apple.com" 
+              target="_blank"
+              class="bg-primary text-on-primary px-8 py-4 rounded-xl font-semibold active-press flex items-center gap-3 shadow-xl shadow-primary/20"
+            >
+              <span class="apple-logo flex items-center">
+                <svg viewBox="0 0 384 512" width="20" height="20" fill="currentColor">
+                  <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path>
+                </svg>
+              </span>
+              <span id="appStoreButtonText">Im App Store laden</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -top-20 -right-20 w-80 h-80 bg-primary-container/10 rounded-full blur-3xl"></div>
+          <div class="bg-black p-4 rounded-[2rem] shadow-2xl rotate-3 transform transition-transform hover:rotate-0 duration-700">
+            <img 
+              src="images/App2.png"
+              class="rounded-[1.5rem] w-full h-auto"
+              alt="App Mockup"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="bg-surface-container-low py-24 px-6" id="about">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row gap-16 items-center">
+          <div class="flex-1 order-2 md:order-1">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-surface p-1 rounded-xl shadow-sm aspect-square overflow-hidden">
+                <img class="w-full h-full object-cover rounded-lg" data-alt="close up of a basketball player preparing a shot with focus on the arm alignment and form" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq5EkoaPBKrup1orHmY5crYj-n1e9IXF7wy7fYp0aN8xRIRj-zWojqjdvnjf-yMvw2VPXLYHRmI7TccEV-d0sglQSTZizNA3sjJdR_PLzMVwc1Pjfnee81Wik4Vr6QeD4wsqbX3IQLjOcCJ_UDn7FMK4qwgd83AbArKS8OD_lODVu-ahY5Qvp-7jVhuH006l3b0sxkvqG03FuT35kIIy3oMepn8LFrqv3icC8Tc4qq4-VdL_g4hxzf7jPX8IPc-pThzzSgvkhxC54"/>
+              </div>
+              <div class="bg-surface p-1 rounded-xl shadow-sm aspect-square overflow-hidden mt-8">
+                <img class="w-full h-full object-cover rounded-lg" data-alt="athlete performing a jumping motion with motion blur effect and high dynamic contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMsmyMx5Zfvc637AS9TKR9iQgP3DkO81Gs2HEr4G--yMj42a-i-9IL1QPZEM67Sf_7JsVt2clyT4HeU2o_4cAqF2ziKn_yvqjWmYw0fB5kCV-o7EcnJBzt2ZuKOU8xMp-VSEC0quphtX3Pe5cKomcIArXySVamUxSuYsWn_2eZsOHKScNOOI1RYHcEsIkd-72KSxVXV8m5oMCMrQ5HwaMwkXQgTZnF9U0eKwOXTvutewHRGGwFVu5XpF4cV44ptuWXCFcdPZlprhI"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex-1 order-1 md:order-2">
+            <span class="text-primary font-bold uppercase tracking-widest text-sm font-label mb-4 block" id="aboutTag">Präzision</span>
+            <h2 class="font-headline text-4xl font-extrabold mb-8" id="aboutTitle">Was ist AngleUp?</h2>
+            <p class="text-on-surface-variant text-lg leading-relaxed mb-8" id="aboutText">
+              AngleUp ist eine App für den Breiten- und Schulsport, mit der die Gelenkwinkel bei sportlichen Bewegungen gemessen werden. Beispielsweise kann das Abklappen des Handgelenks und die Kniebeuge beim Basketballwurf aufgezeichnet werden. Die Bewegungsanalyse dient der Trainingsunterstützung und Technikverbesserung durch qualitative Messwerte und visuelles Feedback.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-24 px-6 bg-surface" id="features">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="text-primary font-bold uppercase tracking-widest text-sm font-label mb-4 block" id="featuresTag">Funktionen</span>
+          <h2 class="font-headline text-4xl md:text-5xl font-extrabold" id="featuresTitle">Funktionen</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-6 md:grid-rows-2 gap-6">
+          <div class="md:col-span-3 bento-card bg-surface-container-low p-8 rounded-2xl border border-outline-variant/20 hover:shadow-xl transition">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center">
+                <span class="material-symbols-outlined text-2xl">straighten</span>
+              </div>
+              <h3 class="font-headline font-extrabold text-xl" id="feature1Title">Winkelmessung</h3>
+            </div>
+            <p class="text-on-surface-variant" id="feature1Text">Präzise Bestimmung von Gelenkwinkeln direkt aus Kurzvideos deiner Mediathek.</p>
+          </div>
+
+          <div class="md:col-span-3 bento-card bg-surface-container-low p-8 rounded-2xl border border-outline-variant/20 hover:shadow-xl transition">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center">
+                <span class="material-symbols-outlined text-2xl">hourglass_empty</span>
+              </div>
+              <h3 class="font-headline font-extrabold text-xl" id="feature2Title">Zeitlupen-Analyse</h3>
+            </div>
+            <p class="text-on-surface-variant" id="feature2Text">Analysiere komplexe Bewegungsabläufe in Zeitlupe oder in Standbildern.</p>
+          </div>
+
+          <div class="md:col-span-2 bento-card bg-surface-container-low p-6 rounded-2xl border border-outline-variant/20 hover:shadow-xl transition">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center">
+                <span class="material-symbols-outlined text-xl">video_library</span>
+              </div>
+              <h3 class="font-headline font-bold text-lg" id="feature3Title">Videoexport</h3>
+            </div>
+            <p class="text-sm text-on-surface-variant" id="feature3Text">Exportiere Videos mit eingeblendeten Winkeln für Präsentationen.</p>
+          </div>
+
+          <div class="md:col-span-2 bento-card bg-surface-container-low p-6 rounded-2xl border border-outline-variant/20 hover:shadow-xl transition">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center">
+                <span class="material-symbols-outlined text-xl">bar_chart</span>
+              </div>
+              <h3 class="font-headline font-bold text-lg" id="feature4Title">Zeitverlauf</h3>
+            </div>
+            <p class="text-sm text-on-surface-variant" id="feature4Text">Visualisiere Bewegungen in übersichtlichen Diagrammen.</p>
+          </div>
+
+          <div class="md:col-span-2 bento-card bg-surface-container-low p-6 rounded-2xl border border-outline-variant/20 hover:shadow-xl transition">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center">
+                <span class="material-symbols-outlined text-xl">table_chart</span>
+              </div>
+              <h3 class="font-headline font-bold text-lg" id="feature5Title">Excel Export</h3>
+            </div>
+            <p class="text-sm text-on-surface-variant" id="feature5Text">Exportiere Rohdaten für wissenschaftliche Analysen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="py-24 px-6 bg-surface" id="Education">
+      <div class="max-w-7xl mx-auto bg-primary-container rounded-[2rem] overflow-hidden flex flex-col lg:flex-row shadow-2xl">
+        <div class="flex-1 p-12 md:p-16 text-on-primary">
+          <span class="inline-block px-4 py-1 bg-gray-400 rounded-full text-xs font-bold uppercase tracking-widest mb-6" id="educationBadge">Für Schulen</span>
+          <h2 class="font-headline text-4xl md:text-5xl font-extrabold mb-8 leading-tight" id="educationTitle">Einsatz in der Schule</h2>
+          <p class="text-on-primary-container text-lg leading-relaxed mb-10" id="educationText">
+            AngleUp dient als digitales Methodenwerkzeug der Optimierung von Unterrichtssequenzen in vielen Dimensionen. Durch die gemeinsame visuelle Aufbereitung technischer Details fördern wir das kooperative Lernen und folgen dabei den Lehrvorgaben der Länder.
+          </p>
+
+          <ul class="space-y-4">
+            <li class="flex items-start gap-4"><span class="material-symbols-outlined text-secondary-fixed">check_circle</span><span id="edu1">Zeitlupe, Messwerte und Standbilder ermöglichen objektive Bewegungsanalyse</span></li>
+            <li class="flex items-start gap-4"><span class="material-symbols-outlined text-secondary-fixed">check_circle</span><span id="edu2">Sichtbares Feedback von Details, die im normalen Bewegungsablauf kaum erkennbar sind</span></li>
+            <li class="flex items-start gap-4"><span class="material-symbols-outlined text-secondary-fixed">check_circle</span><span id="edu3">Komplexe Bewegungen einfach verständlich machen</span></li>
+            <li class="flex items-start gap-4"><span class="material-symbols-outlined text-secondary-fixed">check_circle</span><span id="edu4">Entwicklung konkreter Strategien zur eigenständigen Verbesserung der Bewegung</span></li>
+            <li class="flex items-start gap-4"><span class="material-symbols-outlined text-secondary-fixed">check_circle</span><span id="edu5">Vergleich mit Idealmodellen zur Technikverbesserung</span></li>
+            <li class="flex items-start gap-4"><span class="material-symbols-outlined text-secondary-fixed">check_circle</span><span id="edu6">Entwicklung und Vergleich eigener Funktionsphasenmodelle</span></li>
+            <li class="flex items-start gap-4"><span class="material-symbols-outlined text-secondary-fixed">check_circle</span><span id="edu7">Unterstützt individuelle Lernwege auf jedem Leistungsniveau</span></li>
+            <li class="flex items-start gap-4"><span class="material-symbols-outlined text-secondary-fixed">check_circle</span><span id="edu8">Einsatz in kooperativen Lernformen</span></li>
+            <li class="flex items-start gap-4"><span class="material-symbols-outlined text-secondary-fixed">check_circle</span><span id="edu9">Analyse in Partner- oder Kleingruppenarbeit</span></li>
+            <li class="flex items-start gap-4"><span class="material-symbols-outlined text-secondary-fixed">check_circle</span><span id="edu10">Förderung von Fachkompetenz und Fachsprache</span></li>
+            <li class="flex items-start gap-4"><span class="material-symbols-outlined text-secondary-fixed">check_circle</span><span id="edu11">Förderung der Reflexionsfähigkeit</span></li>
+            <li class="flex items-start gap-4"><span class="material-symbols-outlined text-secondary-fixed">check_circle</span><span id="edu12">Förderung der Sozialkompetenz durch die Formulierung und Annahme von konstruktivem Feedback</span></li>
+            <li class="flex items-start gap-4"><span class="material-symbols-outlined text-secondary-fixed">check_circle</span><span id="edu13">Objektive Notengebung durch digitale Abgaben mit Messwerten</span></li>
+          </ul>
+        </div>
+
+        <div class="flex-1 min-h-[400px]">
+          <img class="w-full h-full object-cover" data-alt="dynamic shot of teenagers in a modern school gym using digital tablets to record and analyze each other's sports performance" src="images/B2.png"/>
+        </div>
+      </div>
+    </section>
+
+    <!-- Validation -->
+    <section class="py-24 px-6 bg-surface-container-low" id="validation">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center md:text-left">
+          <span class="text-primary font-bold uppercase tracking-widest text-sm font-label mb-4 block" id="validationTag">Wissenschaftlich fundiert</span>
+          <h2 class="font-headline text-4xl md:text-5xl font-extrabold mb-6" id="validationTitle">Wie genau sind die Messdaten?</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div class="space-y-8">
+            <div class="prose prose-lg text-on-surface-variant">
+              <p class="text-lg leading-relaxed" id="validationText">
+                Das Framework der App wurde in der Studie von <strong>Francia et al. (2024)</strong> mit dem etablierten <strong>Xsens System von Movella</strong> verglichen. Die Ergebnisse zeigen, dass der Algorithmus Bewegungsverläufe über die Zeit realitätsnah und zuverlässig abbildet.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="bg-surface p-6 rounded-xl border border-outline-variant/20">
+                <p class="text-3xl font-black text-primary mb-1">R ≈ 0,7</p>
+                <p class="text-sm font-bold text-on-surface" id="validationStat1Title">Starke Korrelation</p>
+                <p class="text-xs text-on-surface-variant" id="validationStat1Text">Gute Übereinstimmung mit den Sensordaten des Referenzsystems.</p>
+              </div>
+
+              <div class="bg-surface p-6 rounded-xl border border-outline-variant/20">
+                <p class="text-3xl font-black text-primary mb-1">&lt;6°</p>
+                <p class="text-sm font-bold text-on-surface" id="validationStat2Title">geringe Abweichung</p>
+                <p class="text-xs text-on-surface-variant" id="validationStat2Text">Der mittlere Bias liegt zwischen 3°-6°.</p>
+              </div>
+            </div>
+
+            <div class="pt-8 border-t border-outline-variant/30">
+              <p class="text-sm font-bold text-on-surface mb-2" id="referenceLabel">Referenz:</p>
+              <p class="text-sm text-on-surface-variant leading-relaxed">[1] Francia, C., et al. (2024). Validation of a MediaPipe System for Markerless Motion Analysis During Virtual Reality Rehabilitation. In: De Paolis, L.T., Arpaia, P., Sacco, M. (eds) Extended Reality. XR Salento 2024. Lecture Notes in Computer Science, vol. 15029. Springer, Cham.</p>
+              <a class="inline-flex items-center gap-2 text-primary font-bold hover:underline mt-4" href="https://doi.org/10.1007/978-3-031-71710-9_3" target="_blank">
+                <span id="articleLinkText">Zum Artikel</span>
+                <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="space-y-12">
+            <div class="group">
+              <div class="bg-white p-4 rounded-2xl shadow-sm border border-outline-variant/10 overflow-hidden mb-4">
+                <img alt="Vergleichsmessung Diagramm" class="w-full h-auto rounded-lg transform transition-transform group-hover:scale-[1.02] duration-500" src="images/Val.png"/>
+              </div>
+              <p class="text-sm text-on-surface-variant italic px-2" id="diagramCaption">
+                <strong class="text-on-surface">Diagramm:</strong> Vergleich des Kniegelenkwinkels vom App-Framework mit dem Xsens-System bei einer Kniebeuge. Die Messung verdeutlicht die hohe Übereinstimmung beider Systeme (Francia et al. 2024).
+              </p>
+            </div>
+
+            <div class="group">
+              <div class="bg-white p-4 rounded-none shadow-sm border border-outline-variant/10 overflow-hidden mb-4">
+                <img alt="Statistische Tabelle" class="w-full h-auto rounded-none transform transition-transform group-hover:scale-[1.02] duration-500" src="images/Tab.png"/>
+              </div>
+              <p class="text-sm text-on-surface-variant italic px-2" id="tableCaption">
+                <strong class="text-on-surface">Tabelle:</strong> Statistische Kennwerte bei der Validierung des App-Frameworks mit Xsens. (Francia et al. 2024)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#f3f4f5] dark:bg-slate-950 w-full py-16 px-8 mt-auto">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+      <div class="md:col-span-1">
+        <span class="text-lg font-bold text-[#191c1d] dark:text-white mb-6 block font-headline">AngleUp</span>
+        <p class="text-slate-500 dark:text-slate-500 font-body text-sm leading-relaxed" id="footerDescription">
+          Bewegungsanalyse für den Schul- und Breitensport.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-[#003d9b] font-bold text-sm uppercase tracking-[5%] mb-6 font-label" id="footerLinksTitle">Links</h4>
+        <ul class="space-y-4">
+          <li><a class="text-slate-500 hover:text-[#003d9b] dark:hover:text-blue-400 transition-all font-body text-sm uppercase tracking-[5%]" href="#features" id="footerFeatures">Features</a></li>
+          <li><a class="text-slate-500 hover:text-[#003d9b] dark:hover:text-blue-400 transition-all font-body text-sm uppercase tracking-[5%]" href="#Education" id="footerEducation">Educational Use</a></li>
+          <li><a class="text-slate-500 hover:text-[#003d9b] dark:hover:text-blue-400 transition-all font-body text-sm uppercase tracking-[5%]" href="https://www.apple.com/de/app-store/">App Store</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-[#003d9b] font-bold text-sm uppercase tracking-[5%] mb-6 font-label" id="footerLegalTitle">Rechtliches</h4>
+        <ul class="space-y-4">
+          <li>
+            <a
+              class="text-slate-500 hover:text-[#003d9b] dark:hover:text-blue-400 transition-all font-body text-sm uppercase tracking-[5%]"
+              href="privacy.html"
+              target="_blank"
+              id="privacyPolicy"
+            >
+              Datenschutz
+            </a>
+          </li>
+          <li>
+            <a
+              class="text-slate-500 hover:text-[#003d9b] dark:hover:text-blue-400 transition-all font-body text-sm uppercase tracking-[5%]"
+              href="terms.html"
+              target="_blank"
+              id="termsOfService"
+            >
+              Nutzungsbedingungen
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-[#003d9b] font-bold text-sm uppercase tracking-[5%] mb-6 font-label" id="footerImprintTitle">Impressum</h4>
+        <address class="not-italic text-slate-500 dark:text-slate-500 font-body text-sm space-y-2">
+          <p class="font-bold text-on-surface">AngleUp</p>
+          <p>Paulstraße 7</p>
+          <p>30167 Hannover</p>
+          <p class="pt-2">
+            <span id="emailLabel">E-Mail:</span>
+            <a href="mailto:Angleup@web.de" class="text-primary underline">Angleup@web.de</a>
+          </p>
+        </address>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto pt-16 mt-16 border-t border-outline-variant/10">
+      <p class="text-slate-500 dark:text-slate-500 font-body text-sm uppercase tracking-[5%] text-center" id="footerCopyright">
+        © 2025 AngleUp Performance Analysis. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function setLanguage(lang) {
+      const translations = {
+        de: {
+          downloadNow: "Download Now",
+          heroSubtitle: "Analysiere deine Bewegungen. Verbessere deine Technik.",
+          appStoreButtonText: "Im App Store laden",
+
+          mobileNavAbout: "Allgemein",
+          mobileNavFeatures: "Funktionen",
+          mobileNavEducation: "Für Schulen",
+          mobileNavValidation: "Validierung",
+
+          aboutTag: "Präzision",
+          aboutTitle: "Was ist AngleUp?",
+          aboutText: "AngleUp ist eine App für den Breiten- und Schulsport, mit der die Gelenkwinkel bei sportlichen Bewegungen gemessen werden. Beispielsweise kann das Abklappen des Handgelenks und die Kniebeuge beim Basketballwurf aufgezeichnet werden. Die Bewegungsanalyse dient der Trainingsunterstützung und Technikverbesserung durch qualitative Messwerte und visuelles Feedback.",
+
+          featuresTag: "Funktionen",
+          featuresTitle: "Funktionen",
+          feature1Title: "Winkelmessung",
+          feature1Text: "Präzise Bestimmung von Gelenkwinkeln direkt aus Kurzvideos deiner Mediathek.",
+          feature2Title: "Zeitlupen-Analyse",
+          feature2Text: "Analysiere komplexe Bewegungsabläufe in Zeitlupe oder in Standbildern.",
+          feature3Title: "Videoexport",
+          feature3Text: "Exportiere Videos mit eingeblendeten Winkeln für Präsentationen.",
+          feature4Title: "Zeitverlauf",
+          feature4Text: "Visualisiere Bewegungen in übersichtlichen Diagrammen.",
+          feature5Title: "Excel Export",
+          feature5Text: "Exportiere Rohdaten für wissenschaftliche Analysen.",
+
+          educationBadge: "Für Schulen",
+          educationTitle: "Einsatz in der Schule",
+          educationText: "AngleUp dient als digitales Methodenwerkzeug der Optimierung von Unterrichtssequenzen in vielen Dimensionen. Durch die gemeinsame visuelle Aufbereitung technischer Details fördern wir das kooperative Lernen und folgen dabei den Lehrvorgaben der Länder.",
+          edu1: "Zeitlupe, Messwerte und Standbilder ermöglichen objektive Bewegungsanalyse",
+          edu2: "Sichtbares Feedback von Details, die im normalen Bewegungsablauf kaum erkennbar sind",
+          edu3: "Komplexe Bewegungen einfach verständlich machen",
+          edu4: "Entwicklung konkreter Strategien zur eigenständigen Verbesserung der Bewegung",
+          edu5: "Vergleich mit Idealmodellen zur Technikverbesserung",
+          edu6: "Entwicklung und Vergleich eigener Funktionsphasenmodelle",
+          edu7: "Unterstützt individuelle Lernwege auf jedem Leistungsniveau",
+          edu8: "Einsatz in kooperativen Lernformen",
+          edu9: "Analyse in Partner- oder Kleingruppenarbeit",
+          edu10: "Förderung von Fachkompetenz und Fachsprache",
+          edu11: "Förderung der Reflexionsfähigkeit",
+          edu12: "Förderung der Sozialkompetenz durch die Formulierung und Annahme von konstruktivem Feedback",
+          edu13: "Objektive Notengebung durch digitale Abgaben mit Messwerten",
+
+          validationTag: "Wissenschaftlich fundiert",
+          validationTitle: "Wie genau sind die Messdaten?",
+          validationText: "Das Framework der App wurde in der Studie von <strong>Francia et al. (2024)</strong> mit dem etablierten <strong>Xsens System von Movella</strong> verglichen. Die Ergebnisse zeigen, dass der Algorithmus Bewegungsverläufe über die Zeit realitätsnah und zuverlässig abbildet.",
+          validationStat1Title: "Starke Korrelation",
+          validationStat1Text: "Gute Übereinstimmung mit den Sensordaten des Referenzsystems.",
+          validationStat2Title: "geringe Abweichung",
+          validationStat2Text: "Der mittlere Bias liegt zwischen 3°-6°.",
+          referenceLabel: "Referenz:",
+          articleLinkText: "Zum Artikel",
+          diagramCaption: "<strong class='text-on-surface'>Diagramm:</strong> Vergleich des Kniegelenkwinkels vom App-Framework mit dem Xsens-System bei einer Kniebeuge. Die Messung verdeutlicht die hohe Übereinstimmung beider Systeme (Francia et al. 2024).",
+          tableCaption: "<strong class='text-on-surface'>Tabelle:</strong> Statistische Kennwerte bei der Validierung des App-Frameworks mit Xsens. (Francia et al. 2024)",
+
+          footerDescription: "Bewegungsanalyse für den Schul- und Breitensport.",
+          footerLinksTitle: "Links",
+          footerEducation: "Einsatz in der Schule",
+          footerLegalTitle: "Rechtliches",
+          privacyPolicy: "Datenschutz",
+          termsOfService: "Nutzungsbedingungen",
+          privacyHref: "privacy.html",
+          termsHref: "terms.html",
+          footerImprintTitle: "Impressum",
+          emailLabel: "E-Mail:",
+          footerCopyright: "© 2025 AngleUp Performance Analysis. All rights reserved."
+        },
+
+        en: {
+          downloadNow: "Download Now",
+          heroSubtitle: "Analyze your movements. Improve your technique.",
+          appStoreButtonText: "Download on the App Store",
+
+          mobileNavAbout: "Overview",
+          mobileNavFeatures: "Features",
+          mobileNavEducation: "For Schools",
+          mobileNavValidation: "Validation",
+
+          aboutTag: "Precision",
+          aboutTitle: "What is AngleUp?",
+          aboutText: "AngleUp is an app for recreational and school sports that measures joint angles during athletic movements. For example, wrist flexion and knee bend during a basketball shot can be recorded. Motion analysis supports training and technique improvement through qualitative measurements and visual feedback.",
+
+          featuresTag: "Capabilities",
+          featuresTitle: "Features",
+          feature1Title: "Angle Measurement",
+          feature1Text: "Precise determination of joint angles directly from short videos in your media library.",
+          feature2Title: "Slow-Motion Analysis",
+          feature2Text: "Analyze complex movement sequences in slow motion or as still frames.",
+          feature3Title: "Video Export",
+          feature3Text: "Export videos with displayed angles for presentations.",
+          feature4Title: "Time Progression",
+          feature4Text: "Visualize movements in clear and structured charts.",
+          feature5Title: "Excel Export",
+          feature5Text: "Export raw data for scientific analysis.",
+
+          educationBadge: "For Schools",
+          educationTitle: "Use in Schools",
+          educationText: "AngleUp serves as a digital teaching tool to optimize lesson sequences in many dimensions. By jointly visualizing technical details, we promote cooperative learning and align with regional curriculum requirements.",
+          edu1: "Slow motion, measurements, and still images enable objective motion analysis",
+          edu2: "Visible feedback on details that are barely recognizable during normal movement",
+          edu3: "Make complex movements easy to understand",
+          edu4: "Develop concrete strategies for independent movement improvement",
+          edu5: "Comparison with ideal models to improve technique",
+          edu6: "Development and comparison of custom phase models of movement",
+          edu7: "Supports individual learning paths at every performance level",
+          edu8: "Use in cooperative learning formats",
+          edu9: "Analysis in partner or small-group work",
+          edu10: "Promotion of subject knowledge and technical language",
+          edu11: "Promotion of reflective skills",
+          edu12: "Promotion of social skills through giving and receiving constructive feedback",
+          edu13: "Objective grading through digital submissions with measurement data",
+
+          validationTag: "Scientifically Validated",
+          validationTitle: "How accurate is the measurement data?",
+          validationText: "The app framework was compared in the study by <strong>Francia et al. (2024)</strong> with the established <strong>Xsens system by Movella</strong>. The results show that the algorithm maps movement patterns over time realistically and reliably.",
+          validationStat1Title: "Strong Correlation",
+          validationStat1Text: "Good agreement with the sensor data of the reference system.",
+          validationStat2Title: "Low Deviation",
+          validationStat2Text: "The mean bias is between 3° and 6°.",
+          referenceLabel: "Reference:",
+          articleLinkText: "View Article",
+          diagramCaption: "<strong class='text-on-surface'>Chart:</strong> Comparison of knee joint angle measured by the app framework and the Xsens system during a squat. The measurement shows the high agreement between both systems (Francia et al. 2024).",
+          tableCaption: "<strong class='text-on-surface'>Table:</strong> Statistical metrics from the validation of the app framework with Xsens. (Francia et al. 2024)",
+
+          footerDescription: "Motion analysis for school and recreational sports.",
+          footerLinksTitle: "Links",
+          footerEducation: "Educational Use",
+          footerLegalTitle: "Legal",
+          privacyPolicy: "Privacy Policy",
+          termsOfService: "Terms of Service",
+          privacyHref: "privacy-en.html",
+          termsHref: "terms-en.html",
+          footerImprintTitle: "Legal Notice",
+          emailLabel: "Email:",
+          footerCopyright: "© 2025 AngleUp Performance Analysis. All rights reserved."
+        }
+      };
+
+      Object.keys(translations[lang]).forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.innerHTML = translations[lang][id];
+        }
+      });
+
+      const privacyLink = document.getElementById("privacyPolicy");
+      const termsLink = document.getElementById("termsOfService");
+
+      if (privacyLink) {
+        privacyLink.href = translations[lang].privacyHref;
+      }
+
+      if (termsLink) {
+        termsLink.href = translations[lang].termsHref;
+      }
+
+      document.documentElement.lang = lang;
+
+      const deButtons = [document.getElementById("btn-de"), document.getElementById("btn-de-mobile")];
+      const enButtons = [document.getElementById("btn-en"), document.getElementById("btn-en-mobile")];
+
+      deButtons.forEach(btn => btn && btn.classList.remove("lang-btn-active"));
+      enButtons.forEach(btn => btn && btn.classList.remove("lang-btn-active"));
+
+      if (lang === "de") {
+        deButtons.forEach(btn => btn && btn.classList.add("lang-btn-active"));
+      } else {
+        enButtons.forEach(btn => btn && btn.classList.add("lang-btn-active"));
+      }
+
+      localStorage.setItem("language", lang);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const btn = document.getElementById("mobileMenuBtn");
+      const menu = document.getElementById("mobileMenu");
+
+      btn.addEventListener("click", (e) => {
+        menu.classList.toggle("hidden");
+        e.stopPropagation();
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) && !btn.contains(e.target)) {
+          menu.classList.add("hidden");
+        }
+      });
+
+      const savedLanguage = localStorage.getItem("language") || "de";
+      setLanguage(savedLanguage);
+    });
+  </script>
+
+</body>
+</html>
